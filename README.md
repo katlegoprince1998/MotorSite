@@ -14,10 +14,10 @@ A beginner-friendly **MERN** stack project designed to help you understand full-
     <td align="center"><img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" /></td>
   </tr>
   <tr>
-    <td align="center">MongoDB</td>
-    <td align="center">Express.js</td>
-    <td align="center">React</td>
-    <td align="center">Node.js</td>
+    <td align="center">M</td>
+    <td align="center">E</td>
+    <td align="center">R</td>
+    <td align="center">N</td>
   </tr>
 </table>
 
