@@ -1,5 +1,5 @@
 import Motor from "../models/motor.model.js";
-import mongoose, { get } from "mongoose";
+
 
 export const getMotorById = async (req, res) => {
     const {id} = req.params;
