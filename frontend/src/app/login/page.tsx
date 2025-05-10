@@ -26,9 +26,9 @@ const LoginScreen = () => {
       <div className="flex items-center justify-center h-full">
         <form
           onSubmit={handleLogin}
-          className="bg-white p-8 rounded-xl shadow-xl w-full max-w-md"
+          className={`${COLORS.backgroundGradient} ${COLORS.textPrimary} p-8 rounded-xl shadow-xl w-full max-w-md`}
         >
-          <h2 className="text-2xl font-extrabold mb-6 text-center">Sign In</h2>
+          <h2 className="text-2xl font-extrabold mb-6 text-center text-red-600">Sign In</h2>
 
           <div className="mb-4">
             <label htmlFor="email" className="block text-lg mb-2">
@@ -39,7 +39,7 @@ const LoginScreen = () => {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:bg-gradient-to-b from-black via-zinc-900 to-black"
               placeholder="you@example.com"
             />
           </div>
@@ -53,7 +53,7 @@ const LoginScreen = () => {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:bg-gradient-to-b from-black via-zinc-900 to-black"
               placeholder="********"
             />
           </div>
@@ -70,7 +70,7 @@ const LoginScreen = () => {
               Don't have an account?{" "}
               <button
                 onClick={() => router.push("/signup")}
-                className="text-blue-500 hover:underline"
+                className="hover:underline text:lg font-semibold text-red-600" 
               >
                 Sign Up
               </button>
