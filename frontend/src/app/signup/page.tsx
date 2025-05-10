@@ -4,17 +4,17 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { COLORS } from "../../../constants/constants.js";
 
-const LoginScreen = () => {
+const RegisterScreen = () => {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [password2, setPassword2] = useState("");
+  const [fullnames, setFullnames] = useState("");
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleSignUp = (e: React.FormEvent) => {
     e.preventDefault();
     router.push("/dashboard"); 
   };
-
-
 
   return (
     <div className={`min-h-screen ${COLORS.backgroundGradient} ${COLORS.textPrimary}`}>
@@ -24,10 +24,24 @@ const LoginScreen = () => {
 
       <div className="flex items-center justify-center h-full">
         <form
-          onSubmit={handleLogin}
+          onSubmit={handleSignUp}
           className={`${COLORS.backgroundGradient} ${COLORS.textPrimary} p-8 rounded-xl shadow-xl w-full max-w-md`}
         >
-          <h2 className="text-2xl font-extrabold mb-6 text-center text-red-600">Sign In</h2>
+          <h2 className="text-2xl font-extrabold mb-6 text-center text-red-600">Sign UP</h2>
+
+           <div className="mb-4">
+            <label htmlFor="email" className="block text-lg mb-2">
+              Full Names
+            </label>
+            <input
+              id="fullnames"
+              type="text"
+              value={fullnames}
+              onChange={(e) => setFullnames(e.target.value)}
+              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:bg-gradient-to-b from-black via-zinc-900 to-black"
+              placeholder="Katlego Mashego"
+            />
+          </div>
 
           <div className="mb-4">
             <label htmlFor="email" className="block text-lg mb-2">
@@ -57,22 +71,36 @@ const LoginScreen = () => {
             />
           </div>
 
+            <div className="mb-6">
+            <label htmlFor="password" className="block text-lg mb-2">
+              Repeat password
+            </label>
+            <input
+              id="password"
+              type="password"
+              value={password2}
+              onChange={(e) => setPassword2(e.target.value)}
+              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:bg-gradient-to-b from-black via-zinc-900 to-black"
+              placeholder="********"
+            />
+          </div>
+
           <button
             type="submit"
             className={`${COLORS.buttonPrimary} w-full py-3 rounded-full text-lg font-semibold shadow-md`}
           >
-            Sign In
+            Sign Up
           </button>
 
           <div className="mt-6 text-center">
             <p className="text-lg">
-              Don't have an account?{" "}
+              Already have an account?{" "}
               <button
-                onClick={() => router.push("/signup")}
+                onClick={() => router.push("/login")}
                 type="button"
                 className="hover:underline text:lg font-semibold text-red-600" 
               >
-                Sign Up
+                Sign In
               </button>
             </p>
           </div>
@@ -82,4 +110,4 @@ const LoginScreen = () => {
   );
 };
 
-export default LoginScreen;
+export default RegisterScreen;
