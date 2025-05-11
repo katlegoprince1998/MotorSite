@@ -1,16 +1,19 @@
-// ./components/dashboard/ImageCard.tsx
-
 "use client";
 
 import { useState } from "react";
 import { HeartIcon, ChatBubbleLeftIcon, ShareIcon } from "@heroicons/react/24/outline";
+import { COLORS } from "@/constants/constants";
 
 const ImageCard = () => {
   const [readMore, setReadMore] = useState(false);
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
-      <div className="w-full h-48 bg-gray-200" />
+    <div className={`${COLORS.backgroundGradient} text-red-600  rounded-lg shadow-lg shadow-red-600/30 overflow-hidden`}>
+      <img
+        src="https://images.unsplash.com/photo-1583692717320-0c9661d49d9a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJtd3xlbnwwfHwwfHx8MA%3D%3D"
+        alt="Post by Alex"
+        className="w-full h-48 object-cover"
+      />
       <div className="p-4">
         <div className="flex justify-between items-center mb-2">
           <p className="text-sm font-medium text-gray-700">Posted by Alex</p>
