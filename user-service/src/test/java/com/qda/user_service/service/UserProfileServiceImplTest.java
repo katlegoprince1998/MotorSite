@@ -46,7 +46,8 @@ class UserProfileServiceImplTest {
 
     @Test
     void createProfile_success() {
-        CreateUserprofileRequest request = new CreateUserprofileRequest("Test User", "test@example.com", "USER", "password123", "+1234567890");
+        CreateUserprofileRequest request = new CreateUserprofileRequest("Test User", "test@example.com",
+                "USER", "password123", "+1234567890");
         UserProfile user = mockUser(1L);
 
         when(repository.save(any(UserProfile.class))).thenReturn(user);
